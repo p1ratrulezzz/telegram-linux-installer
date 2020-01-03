@@ -10,7 +10,7 @@ wget -O - https://raw.githubusercontent.com/p1ratrulezzz/telegram-linux-installe
 If you do not have wget, install it
 
 ```bash
-apt-get install curl
+apt-get install wget
 ```
 
 It will install latest Telegram and run it. Also there will be an entry in Menu to run Telegram from it.
