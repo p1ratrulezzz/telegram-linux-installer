@@ -42,10 +42,10 @@ echo "Making desktop files..."
 cd /tmp
 
 sudo echo "[Desktop Entry]" > telegram.desktop
-sudo echo "Name=Telegram" >> telegram.desktop
+sudo echo "Name=Telegram Desktop" >> telegram.desktop
 sudo echo "GenericName=Chat" >> telegram.desktop
-sudo echo "Comment=Chat with yours friends" >> telegram.desktop
-sudo echo "Exec=/usr/share/telegram/Telegram" >> telegram.desktop
+sudo echo "Comment=Official desktop application for the Telegram messaging service" >> telegram.desktop
+sudo echo "Exec=/usr/share/telegram/Telegram -- %u" >> telegram.desktop
 sudo echo "Terminal=false" >> telegram.desktop
 sudo echo "Type=Application" >> telegram.desktop
 sudo echo "Icon=/usr/share/telegram/icon.png" >> telegram.desktop
