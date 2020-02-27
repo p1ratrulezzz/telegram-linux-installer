@@ -65,10 +65,10 @@ sudo echo "Icon=/opt/telegram/icon.png" >> telegram_updater.desktop
 sudo echo "Categories=Network;Chat;" >> telegram_updater.desktop
 sudo echo "StartupNotify=false" >> telegram_updater.desktop
 
-sudo echo "#!/bin/sh" > updater.sh
-sudo echo "WD=$(dirname $0)" >> updater.sh
-sudo echo "sudo chmod +x \"${WD}/Updater\"" >> updater.sh
-sudo echo "sudo \"${WD}/Updater\"" >> updater.sh
+sudo echo '#!/bin/sh' > updater.sh
+sudo echo 'WD=$(dirname $0)' >> updater.sh
+sudo echo 'sudo chmod +x "${WD}/Updater"' >> updater.sh
+sudo echo 'sudo "${WD}/Updater"' >> updater.sh
 sudo chmod +x updater.sh
 
 
