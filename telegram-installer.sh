@@ -67,7 +67,7 @@ sudo echo "StartupNotify=false" >> telegram_updater.desktop
 
 sudo cp icon.png /opt/telegram/icon.png
 sudo cp telegram.desktop /usr/share/applications/telegram.desktop
-sudo cp telegram_updater.desktop /usr/share/applications/telegram_updater.desktop
+# sudo cp telegram_updater.desktop /usr/share/applications/telegram_updater.desktop
 
 echo "Removing old files..."
 
