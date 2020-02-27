@@ -47,24 +47,37 @@ sudo echo "[Desktop Entry]" > telegram.desktop
 sudo echo "Name=Telegram Desktop" >> telegram.desktop
 sudo echo "GenericName=Chat" >> telegram.desktop
 sudo echo "Comment=Official desktop application for the Telegram messaging service" >> telegram.desktop
-sudo echo "Exec=/opt/telegram/Updater -- %u" >> telegram.desktop
+sudo echo "Exec=/opt/telegram/Telegram -- %u" >> telegram.desktop
 sudo echo "Terminal=false" >> telegram.desktop
 sudo echo "Type=Application" >> telegram.desktop
 sudo echo "Icon=/opt/telegram/icon.png" >> telegram.desktop
 sudo echo "Categories=Network;Chat;" >> telegram.desktop
 sudo echo "StartupNotify=false" >> telegram.desktop
 
+sudo echo "[Desktop Entry]" > telegram_updater.desktop
+sudo echo "Name=Telegram Update" >> telegram_updater.desktop
+sudo echo "GenericName=Chat" >> telegram_updater.desktop
+sudo echo "Comment=Update Telegram manually" >> telegram_updater.desktop
+sudo echo "Exec=sudo /opt/telegram/Updater" >> telegram_updater.desktop
+sudo echo "Terminal=false" >> telegram_updater.desktop
+sudo echo "Type=Application" >> telegram_updater.desktop
+sudo echo "Icon=/opt/telegram/icon.png" >> telegram_updater.desktop
+sudo echo "Categories=Network;Chat;" >> telegram_updater.desktop
+sudo echo "StartupNotify=false" >> telegram_updater.desktop
+
 sudo cp icon.png /opt/telegram/icon.png
 sudo cp telegram.desktop /usr/share/applications/telegram.desktop
+sudo cp telegram_updater.desktop /usr/share/applications/telegram_updater.desktop
 
 echo "Removing old files..."
 
 rm /tmp/tsetup.tar.gz
 rm /tmp/icon.png
 rm /tmp/telegram.desktop
+rm /tmp/telegram_updater.desktop
 rm -R /tmp/Telegram
 
 
 echo "Installation Complete! Launching Telegram..."
 
-/opt/telegram/Updater &
+sudo /opt/telegram/Updater &
