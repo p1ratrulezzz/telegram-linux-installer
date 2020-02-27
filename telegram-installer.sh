@@ -88,4 +88,4 @@ rm -R /tmp/Telegram
 
 echo "Installation Complete! Launching Telegram..."
 
-sudo /opt/telegram/Updater &
+sudo /opt/telegram/Telegram &
