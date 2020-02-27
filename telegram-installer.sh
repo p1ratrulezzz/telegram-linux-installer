@@ -58,16 +58,24 @@ sudo echo "[Desktop Entry]" > telegram_updater.desktop
 sudo echo "Name=Telegram Update" >> telegram_updater.desktop
 sudo echo "GenericName=Chat" >> telegram_updater.desktop
 sudo echo "Comment=Update Telegram manually" >> telegram_updater.desktop
-sudo echo "Exec=sudo /opt/telegram/Updater" >> telegram_updater.desktop
+sudo echo "Exec=/opt/telegram/updater.sh" >> telegram_updater.desktop
 sudo echo "Terminal=false" >> telegram_updater.desktop
 sudo echo "Type=Application" >> telegram_updater.desktop
 sudo echo "Icon=/opt/telegram/icon.png" >> telegram_updater.desktop
 sudo echo "Categories=Network;Chat;" >> telegram_updater.desktop
 sudo echo "StartupNotify=false" >> telegram_updater.desktop
 
+sudo echo "#!/bin/sh" > updater.sh
+sudo echo "WD=$(dirname $0)" >> updater.sh
+sudo echo "sudo chmod +x "${WD}/Updater"" >> updater.sh
+sudo echo "sudo "${WD}/Updater"" >> updater.sh
+sudo chmod +x updater.sh
+
+
 sudo cp icon.png /opt/telegram/icon.png
 sudo cp telegram.desktop /usr/share/applications/telegram.desktop
-# sudo cp telegram_updater.desktop /usr/share/applications/telegram_updater.desktop
+sudo cp updater.sh /opt/telegram/updater.sh
+sudo cp telegram_updater.desktop /usr/share/applications/telegram_updater.desktop
 
 echo "Removing old files..."
 
